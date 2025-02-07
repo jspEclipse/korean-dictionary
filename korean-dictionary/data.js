@@ -1,4 +1,4 @@
-[
+export const data = [
  {
    "Order": 1,
    "Vocab": "네",

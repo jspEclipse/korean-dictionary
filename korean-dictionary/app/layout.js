@@ -8,8 +8,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="flex bg-black">
-        {children}
+      <body className="flex justify-center">
+        <div className="w-[60%]">
+          {children}
+        </div>
       </body>
     </html>
   );
