@@ -22,7 +22,7 @@ const WordList = () => {
                             english.includes(search.toLowerCase()) ||
                             romanization.includes(search.toLowerCase())
                         );
-                    }).slice(0,40).map((item) => (
+                    }).slice(0,39).map((item) => (
                         <VocabCard key={item.Order} vocab={item.Vocab} roman={item["Vocab-Rom"]} eng={item["Vocab-English"]}/>
                     ))}
             </div>
