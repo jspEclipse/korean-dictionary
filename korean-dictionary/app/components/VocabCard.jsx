@@ -36,10 +36,10 @@ const VocabCard = (props) => {
                 {/* Card Content */}
                 <CardHeader>
                     <CardTitle>{props.vocab}</CardTitle>
-                    <CardDescription className="line-clamp-2 h-[2.5rem]">{props.roman}</CardDescription>
+                    <CardDescription>{props.roman}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <p>{props.eng}</p>
+                    <p className="line-clamp-1">{props.eng}</p>
                 </CardContent>
             </Card>
         </div>
