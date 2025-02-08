@@ -9,8 +9,8 @@ const WordList = () => {
     console.log(search);
     return (
         <div>
-            <Input onChange={(e) => setSearch(e.target.value)} className="w-48 h-6" placeholder="Search..."/>
-            <div className="grid grid-cols-3 gap-1">
+            <Input onChange={(e) => setSearch(e.target.value)} className="w-48 h-9 my-4" placeholder="Search..."/>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
                 {data.filter((item) => {
                         const korean = item.Vocab ? String(item.Vocab) : "";
                         const english = item["Vocab-English"] ? String(item["Vocab-English"]).toLowerCase() : "";

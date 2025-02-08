@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="flex justify-center">
-        <div className="w-[60%]">
+        <div className="xl:w-[60%] md:w-[75%] w-[90%]">
           {children}
         </div>
       </body>
