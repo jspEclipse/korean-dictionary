@@ -1,5 +1,7 @@
 # korean-dictionary
 An interactive Korean-English Dictionary
+<img width="1154" alt="Screenshot 2025-02-11 at 12 30 18 AM" src="https://github.com/user-attachments/assets/8bf387e8-b5ce-4056-b5fc-f144852ea986" />
+
 
 # How it was made
 the first problem that came up was where I was going to get the data for this site. I then remembered that
