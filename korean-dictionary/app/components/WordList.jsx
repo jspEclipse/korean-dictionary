@@ -9,6 +9,11 @@ import VocabCard from './VocabCard';
 
 const ItemsPerPage = 24;
 
+/*
+ * FullCard Component
+ * Using ShadCN's implementation on Cards I
+ * created a pop up that is shown whenever a vocab card is clicked on
+ */
 const FullCard = ({ selectedWord, onClose }) => {
     if (!selectedWord) return null;
 
@@ -37,13 +42,25 @@ const FullCard = ({ selectedWord, onClose }) => {
 };
 
 
+
+
 const WordList = () => {
     const [search, setSearch] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedWord, setSelectedWord] = useState(null);
     const [isFullCardVisible, setIsFullCardVisible] = useState(false);
 
+    /*
+     *  filteredData:
+     *  uses .includes() and .filter(item) function to search through
+     *  all of the potential vocabulary words that the user may be 
+     *  searching for.
+     * 
+     *  potential upgrade would be implementing a fuzzy search algorithm to
+     *  account for user error while searching for a word
+     */
     const filteredData = data.filter((item) => {
+        
         const korean = item.Vocab ? String(item.Vocab) : "";
         const english = item["Vocab-English"] ? String(item["Vocab-English"]).toLowerCase() : "";
         const romanization = item["Vocab-Rom"] ? String(item["Vocab-Rom"]).toLowerCase() : "";
@@ -56,6 +73,7 @@ const WordList = () => {
         );
     });
 
+    //Math behind what cards are shown based on pagination
     const totalPages = Math.ceil(filteredData.length / ItemsPerPage);
     const startIndex = (currentPage - 1) * ItemsPerPage;
     const endIndex = startIndex + ItemsPerPage;
@@ -73,6 +91,7 @@ const WordList = () => {
                 placeholder="Search..."
             />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+                {/* Mapping VocabCard in order for better modularization of components */}
                 {paginatedData.map((item) => (
                     <button
                         key={item.Order}
@@ -90,6 +109,7 @@ const WordList = () => {
                     </button>
                 ))}
             </div>
+            {/* Handles Pagination */}
             {totalPages > 1 && (
                 <Pagination className="mt-4 mb-8">
                     <PaginationContent>

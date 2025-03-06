@@ -6,6 +6,10 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 
+/*
+ * VocabCard
+ * handles displaying the information on the card from data.js
+ */
 const VocabCard = (props) => {
     return (
         <div className="relative group">
@@ -18,7 +22,7 @@ const VocabCard = (props) => {
             ></div>
 
             <Card className="relative overflow-hidden bg-white border border-gray-300 dark:bg-gray-900 dark:border-gray-700">
-                {/* Absolute div inside card (respects overflow-hidden) */}
+                {/* Used HTML and CSS to decorate each card with the top right stripes on the korean flag */}
                 <div className="absolute flex flex-col rotate-45 right-[-20px] top-5">
                     <div className="flex mb-1">
                         <div className="w-12 h-3 bg-black"></div>
